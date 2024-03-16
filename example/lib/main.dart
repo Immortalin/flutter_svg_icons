@@ -50,12 +50,22 @@ class _MyHomePageState extends State<MyHomePage> {
             'Pure color:',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          const SvgIcon(
-              size: 60,
-              responsiveColor: false,
-              icon: SvgIconData(
-                'assets/flutter_logo.svg',
-              )),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              SvgIcon(
+                size: 60,
+                responsiveColor: false,
+                icon: SvgIconData('assets/flutter_logo.svg',
+                    colorSource: SvgColorSource.specialColors),
+              ),
+              SvgIcon(
+                  responsiveColor: false,
+                  size: 60,
+                  icon: SvgIconData('assets/smiling-sun-svgrepo-com.svg',
+                      colorSource: SvgColorSource.specialColors)),
+            ],
+          ),
           const Text(
             'Customized color:',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

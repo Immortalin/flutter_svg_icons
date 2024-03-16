@@ -28,7 +28,7 @@ class SvgIcon extends StatelessWidget {
     if (icon is ResponsiveSvgIconData) {
       {
         Widget result = _ResponsiveSvgIcon(icon as ResponsiveSvgIconData,
-            responsiveColor: responsiveColor, color: this.color);
+            color: this.color);
         var size = this.size ?? IconTheme.of(context).size;
         if (size != null) {
           result = SizedBox(
@@ -40,7 +40,12 @@ class SvgIcon extends StatelessWidget {
         return result;
       }
     }
-    var color = !responsiveColor ? this.color : IconTheme.of(context).color;
+    var color = this.color ??
+        (icon.colorSource == SvgColorSource.specialColors
+            ? null
+            : IconTheme.of(context).color);
+
+    var size = this.size ?? IconTheme.of(context).size;
     Widget result = SvgPicture.asset(
       icon.fullPath,
       package: icon.package,

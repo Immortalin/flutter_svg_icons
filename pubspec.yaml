@@ -1,6 +1,6 @@
 name: flutter_svg_icons
 description: A package to show svg asset files in icon widgets, supporting responsive svg icons.
-version: 0.0.1
+version: 0.0.1+3
 repository: https://github.com/MohammedAsaadAsaad/flutter_svg_icons
 
 environment:
