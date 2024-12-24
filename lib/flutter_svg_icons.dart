@@ -11,3 +11,4 @@ part 'src/svg_icon.dart';
 part 'src/svg_icon_data.dart';
 part 'src/responsive_svg_icon.dart';
 part 'src/responsive_svg_icon_data.dart';
+part 'src/svg_color_source.dart';

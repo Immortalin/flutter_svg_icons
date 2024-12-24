@@ -3,12 +3,9 @@ part of flutter_svg_icons;
 
 class _ResponsiveSvgIcon extends StatelessWidget {
   final ResponsiveSvgIconData icon;
-  final bool responsiveColor;
   final Color? color;
 
-  const _ResponsiveSvgIcon(this.icon,
-      {Key? key, this.responsiveColor = true, this.color})
-      : super(key: key);
+  const _ResponsiveSvgIcon(this.icon, {Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +25,13 @@ class _ResponsiveSvgIcon extends StatelessWidget {
           ? const SizedBox()
           : SvgIcon(
               icon: SvgIconData(path,
-                  reflectable: icon.reflectable, reflected: icon.reflected),
+                  package: icon.package,
+                  prefix: icon.prefix,
+                  reflectable: icon.reflectable,
+                  reflected: icon.reflected,
+                  colorSource: icon.colorSource),
               size: dim,
               color: color,
-              responsiveColor: responsiveColor,
             );
     });
   }

@@ -15,16 +15,24 @@ class ResponsiveSvgIconData extends SvgIconData {
 
   /// Create an instance of [ResponsiveSvgIconData]
   const ResponsiveSvgIconData(this.assetPaths,
-      {String? package, bool? reflectable, bool? reflected})
+      {String? package,
+      bool? reflectable,
+      bool? reflected,
+      SvgColorSource colorSource = SvgColorSource.iconThemeColor})
       : super('',
-            package: package, reflectable: reflectable, reflected: reflected);
+            package: package,
+            reflectable: reflectable,
+            reflected: reflected,
+            colorSource: colorSource);
 
   @override
 
   /// Create another instance of [ResponsiveSvgIconData] with specified configurations.
-  ResponsiveSvgIconData copyWith({bool? reflectable, bool? reflected}) =>
+  ResponsiveSvgIconData copyWith(
+          {bool? reflectable, bool? reflected, SvgColorSource? colorSource}) =>
       ResponsiveSvgIconData(assetPaths,
           package: package,
           reflectable: reflectable ?? this.reflectable,
-          reflected: reflected ?? this.reflected);
+          reflected: reflected ?? this.reflected,
+          colorSource: colorSource ?? this.colorSource);
 }

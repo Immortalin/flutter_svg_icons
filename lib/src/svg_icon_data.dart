@@ -17,9 +17,16 @@ class SvgIconData {
   /// Weather to reflect this svg icon
   final bool? reflected;
 
+  /// Set the color source of this svg
+  final SvgColorSource colorSource;
+
   /// Create an instance of [SvgIconData]
   const SvgIconData(this.name,
-      {this.package, this.prefix, this.reflectable, this.reflected});
+      {this.package,
+      this.prefix,
+      this.reflectable,
+      this.reflected,
+      this.colorSource = SvgColorSource.iconThemeColor});
 
   /// Get the full path of this icon svg file
   String get fullPath => prefix == null ? name : '$prefix/$name';
